@@ -1,0 +1,29 @@
+body {
+      background-image: url('../images/bg.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed; 
+      background-size: 100% 100%;
+    }
+    
+    .white{
+      color: white;
+      font-weight: bold;
+    }
+    
+    .big{
+      font-size: 16pt;
+    }
+    
+    .brown{
+      background-color: sienna;
+      padding: 30px;
+      border-radius: 15px;
+      
+    }
+    
+    .positioning{
+      top: 30%;
+      position: fixed;
+      width: inherit;
+      height: inherit;
+    }

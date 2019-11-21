@@ -51,12 +51,22 @@ public class Chocolate {
 	private String manufacturer;
 	@Column(name = "choc_pic")
 	private String picture;
+	@Column(name = "choc_remaining")
+	private int remaining;
 
 	@OneToMany(mappedBy = "chocolate", cascade = CascadeType.ALL)
 	private List<Message> messages;
 
 	public Chocolate() {
 
+	}
+
+	public int getRemaining() {
+		return remaining;
+	}
+
+	public void setRemaining(int remaining) {
+		this.remaining = remaining;
 	}
 
 	public Long getId() {

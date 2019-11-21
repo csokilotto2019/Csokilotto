@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymleaf.org">
-<head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
 
-<title th:text="${pageTitle}">Csoki lottó</title>
+		<title th:text="${pageTitle}">Csoki lottó</title>
 
-<link rel="stylesheet" th:href="@{css/main.css}"
+		<link rel="stylesheet" th:href="@{css/main.css}"
 	href="../static/css/main.css" />
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 
-<link href='https://fonts.googleapis.com/css?family=Calibri'
+		<link href='https://fonts.googleapis.com/css?family=Calibri'
 	rel='stylesheet' type='text/css' />
-<link href='https://fonts.googleapis.com/css?family=Exo'
+		<link href='https://fonts.googleapis.com/css?family=Exo'
 	rel='stylesheet' type='text/css' />
 
-<!--[if lt IE 9]>
+		<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
-<body>
+	</head>
+	<body>
 
-	<div class="container">
+		<div class="container">
+			<div class="row positioning">
+				<div
+				class="col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-10 col-sm-8 col-md-8 col-lg-8 brown">
+					<h2 class="form-heading white" align="center">Gratulálunk a
+					nyereményedhez!</h2>
+					<form name="ok" th:action="@{/}" th:object="${pa_Chocolate}"
+					method="post" class="form-ok">
+						<input type="text" class="form-control"  th:field="*{name}" readonly="readonly" /> 
+						<input type="text" class="form-control" th:field="*{type}" readonly="readonly" />
+						<input type="text" class="form-control" th:field="*{taste}" readonly="readonly" />
+						<input type="text" class="form-control" th:field="*{weight}" readonly="readonly" />
+						<input type="text" class="form-control" th:field="*{manufacturer}" readonly="readonly" />
 
-		<form name="index" th:action="@{/}" th:object="${pa_Chocolate}"
-			method="post" class="form-email">
-			<h2 class="form-heading">Gratulálunk a nyereményedhez!</h2>
-			<input type="text" th:field="*{name}" readonly="readonly" /> <input
-				type="text" th:field="*{type}" readonly="readonly" /> <input
-				type="text" th:field="*{taste}" readonly="readonly" /> <input
-				type="text" th:field="*{weight}" readonly="readonly" /> <input
-				type="text" th:field="*{manufacturer}" readonly="readonly" />
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Rendben</button>
+					</form>
+				</div>
+			</div>
+		</div>
 
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Rendben</button>
-		</form>
-
-	</div>
-
-</body>
+	</body>
 </html>

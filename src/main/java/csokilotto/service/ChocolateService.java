@@ -14,6 +14,12 @@ public class ChocolateService {
 	public void setChocorepo(ChocolateRepository chocorepo) {
 		this.chocorepo = chocorepo;
 	}
+	
+	public String save(Chocolate chocolate) {
+		chocorepo.save(chocolate);
+		
+		return "ok";
+	}
 
 	/**
 	 * Egy adott id alapján visszaadja a megfelelő rekordot

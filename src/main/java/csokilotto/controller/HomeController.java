@@ -69,7 +69,7 @@ public class HomeController {
 	}
 	
 	/**
-	 * A /win-re való post kérést követően ez az ég fog megfutni.
+	 * A /win-re való post kérést követően ez az ág fog megfutni.
 	 * Itt történik a nyereménycsoki előkeresése és az üzenet küldése.
 	 * @param user a frontendről visszakapot objektum.
 	 * @return a sikeres lefutást követően az oldal ahová átszertnénk irányítani. 
@@ -84,6 +84,8 @@ public class HomeController {
 		int rand_int1 = rand.nextInt(6) + 1;
 
 		Chocolate chocolate = chocosercive.findById((long) rand_int1);
+		chocolate.setRemaining(chocolate.getRemaining() - 1);
+		chocosercive.save(chocolate);
 		log.info("Csoki megvan");
 		log.info(String.valueOf(rand_int1));
 		log.info(chocolate.getName());
